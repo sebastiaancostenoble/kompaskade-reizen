@@ -6,12 +6,12 @@
     <meta name="description" content="Neem contact op met KompasKade Reizen. Vraag een voorstel of stel je vraag via het contactformulier." />
     <title>KompasKade Reizen | Contact</title>
 
-    <!-- Google Font -->
+    <!-- Google Font (vereiste: minstens 1 extern font) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS via CDN -->
+    <!-- Tailwind CSS via CDN (toegestaan volgens opdracht; geen template, wel utility classes) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Eigen externe CSS file -->
@@ -19,6 +19,16 @@
 </head>
 
 <body>
+  <!--
+    Eindopdracht Web I — Contact
+    Bestand: contact.html
+    Laatst aangepast: 2025-12-30
+
+    Vereisten die je hier kan afvinken:
+    - Contactformulier met minimum velden (Naam, Voornaam, Emailadres, Bericht)
+    - Form action naar W3Schools action_page.php (zoals voorgesteld in de opdracht)
+    - Creatieve extra: bestemming + reisperiode + nieuwsbrief checkbox
+  -->
   <!-- ==========================================================
        HEADER + NAVIGATIE
        - Naam/logo, navigatie: zichtbaar op elke pagina (vereiste)
@@ -32,12 +42,12 @@
           <span>KompasKade Reizen</span>
         </a>
 
-        <nav aria-label="Hoofdnavigatie" class="flex items-center justify-start gap-2 overflow-x-auto whitespace-nowrap max-w-full">
-          <a class="nav-link active" href="index.html">Home</a>
+        <nav aria-label="Hoofdnavigatie" class="flex flex-wrap justify-end gap-2">
+          <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="onzereizen.html">Onze reizen</a>
           <a class="nav-link" href="fotogallerij.html">Fotogallerij</a>
           <a class="nav-link" href="reistips.html">Reistips</a>
-          <a class="nav-link" href="contact.html">Contact</a>         
+          <a class="nav-link active" href="contact.html">Contact</a>
         </nav>
       </div>
     </div>
