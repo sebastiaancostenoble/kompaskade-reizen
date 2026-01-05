@@ -215,3 +215,11 @@ input:focus, select:focus, textarea:focus{
 @media print{
   nav, .btn{ display: none !important; }
 }
+
+/* Mobiel: nav mag horizontaal scrollen zonder lelijke scrollbar */
+nav[aria-label="Hoofdnavigatie"]::-webkit-scrollbar {
+  height: 0;
+}
+nav[aria-label="Hoofdnavigatie"] {
+  scrollbar-width: none;
+}
