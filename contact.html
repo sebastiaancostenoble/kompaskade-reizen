@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Neem contact op met KompasKade Reizen. Vraag een voorstel of stel je vraag via het contactformulier." />
+    <title>KompasKade Reizen | Contact</title>
+
+    <!-- Google Font (vereiste: minstens 1 extern font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN (toegestaan volgens opdracht; geen template, wel utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Eigen externe CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!--
+    Eindopdracht Web I — Contact
+    Bestand: contact.html
+    Laatst aangepast: 2025-12-30
+
+    Vereisten die je hier kan afvinken:
+    - Contactformulier met minimum velden (Naam, Voornaam, Emailadres, Bericht)
+    - Form action naar W3Schools action_page.php (zoals voorgesteld in de opdracht)
+    - Creatieve extra: bestemming + reisperiode + nieuwsbrief checkbox
+  -->
+  <!-- ==========================================================
+       HEADER + NAVIGATIE
+       - Naam/logo, navigatie: zichtbaar op elke pagina (vereiste)
+       - Semantisch: <header> + <nav>
+       ========================================================== -->
+  <header class="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+    <div class="page-container">
+      <div class="flex items-center justify-between py-3 gap-4">
+        <a class="brand text-slate-900" href="index.html" aria-label="Ga naar home">
+          <img src="assets/img/logo.svg" alt="KompasKade Reizen logo" class="w-9 h-9" />
+          <span>KompasKade Reizen</span>
+        </a>
+
+        <nav aria-label="Hoofdnavigatie" class="flex flex-wrap justify-end gap-2">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="onzereizen.html">Onze reizen</a>
+          <a class="nav-link" href="fotogallerij.html">Fotogallerij</a>
+          <a class="nav-link" href="reistips.html">Reistips</a>
+          <a class="nav-link active" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container py-10">
+    <header class="text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold">Contact</h1>
+      <p class="text-slate-600 mt-3 max-w-2xl mx-auto">
+        Vertel ons je reisidee. Hoe concreter je bent (periode/budget/voorkeuren),
+        hoe beter wij een voorstel kunnen maken.
+      </p>
+    </header>
+
+    <section aria-label="Contactformulier" class="mt-10">
+      <div class="max-w-2xl mx-auto">
+        <form
+          class="form-card p-6 md:p-8"
+          action="https://www.w3schools.com/action_page.php"
+          method="GET"
+        >
+          <!-- Naam + Voornaam: naast elkaar op desktop, onder elkaar op smartphone -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="naam" class="block text-sm mb-1">Naam</label>
+              <input
+                id="naam"
+                name="naam"
+                type="text"
+                placeholder="Jouw naam"
+                required
+                class="w-full rounded-lg border border-slate-300 px-4 py-2.5"
+              />
+            </div>
+
+            <div>
+              <label for="voornaam" class="block text-sm mb-1">Voornaam</label>
+              <input
+                id="voornaam"
+                name="voornaam"
+                type="text"
+                placeholder="Jouw voornaam"
+                required
+                class="w-full rounded-lg border border-slate-300 px-4 py-2.5"
+              />
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label for="email" class="block text-sm mb-1">Emailadres</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="voorbeeld@domain.com"
+              required
+              class="w-full rounded-lg border border-slate-300 px-4 py-2.5"
+            />
+          </div>
+
+          <div class="mt-4">
+            <label for="bericht" class="block text-sm mb-1">Bericht</label>
+            <textarea
+              id="bericht"
+              name="bericht"
+              rows="6"
+              placeholder="Typ hier je bericht..."
+              required
+              class="w-full rounded-lg border border-slate-300 px-4 py-2.5"
+            ></textarea>
+          </div>
+
+          <!-- Creatieve extra velden (mag; de opdracht zegt “improviseer”) -->
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="bestemming" class="block text-sm mb-1">Interesse in bestemming</label>
+              <select
+                id="bestemming"
+                name="bestemming"
+                class="w-full rounded-lg border border-slate-300 px-4 py-2.5 bg-white"
+              >
+                <option value="">Kies een optie…</option>
+                <option value="Marrakesh">Marrakesh (Marokko)</option>
+                <option value="Rome">Rome (Italië)</option>
+                <option value="IJsland">IJsland</option>
+                <option value="Tokyo">Tokyo (Japan)</option>
+                <option value="Kaapstad">Kaapstad (Zuid-Afrika)</option>
+                <option value="Noorwegen">Noorse fjorden</option>
+                <option value="Andere">Andere / op maat</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="periode" class="block text-sm mb-1">Reisperiode</label>
+              <input
+                id="periode"
+                name="periode"
+                type="month"
+                class="w-full rounded-lg border border-slate-300 px-4 py-2.5"
+              />
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center gap-2">
+            <input id="nieuwsbrief" name="nieuwsbrief" type="checkbox" class="h-4 w-4" />
+            <label for="nieuwsbrief" class="text-sm font-normal">
+              Ja, stuur mij af en toe inspiratie en deals (nieuwsbrief).
+            </label>
+          </div>
+
+          <div class="mt-6">
+            <button type="submit" class="btn btn-primary w-full">Verstuur</button>
+          </div>
+
+          <p class="text-xs text-slate-500 mt-3">
+            (W3Schools demo action_page.php)
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================
+       FOOTER
+       - Aantrekkelijke footer, responsive: gaat naar 1 kolom op smartphone
+       - Semantisch: <footer>
+       ========================================================== -->
+  <footer class="site-footer mt-16">
+    <div class="page-container py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <section aria-label="Over KompasKade Reizen">
+          <h2 class="footer-title text-lg mb-3">KompasKade Reizen</h2>
+          <p class="text-sm leading-relaxed">
+            Kleinschalig reisbureau voor reizigers die graag <strong>echt</strong> weg zijn.
+            Jij kiest de droom, wij bouwen de route: vluchten, verblijf, transfers en tips.
+          </p>
+          <p class="text-sm mt-3 opacity-90">
+            Open: ma–vr 09:00–18:00 • Za op afspraak
+          </p>
+        </section>
+
+        <section aria-label="Contactgegevens">
+          <h2 class="footer-title text-lg mb-3">Contact</h2>
+          <ul class="text-sm space-y-2">
+            <li><strong>Adres:</strong> Kade 12, 9000 Gent</li>
+            <li><strong>Tel:</strong> +32 (0)9 123 45 67</li>
+            <li><strong>E-mail:</strong> info@kompaskade.be</li>
+          </ul>
+        </section>
+
+        <section aria-label="Volg ons">
+          <h2 class="footer-title text-lg mb-3">Volg ons</h2>
+          <p class="text-sm opacity-95">
+            Inspiratie, deals en behind-the-scenes:
+          </p>
+          <ul class="text-sm mt-3 space-y-2">
+            <li><a href="#" aria-label="Instagram link">Instagram</a></li>
+            <li><a href="#" aria-label="Facebook link">Facebook</a></li>
+            <li><a href="#" aria-label="Pinterest link">Pinterest</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-6 text-sm flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+        <span>© 2025 KompasKade Reizen </span>
+        
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

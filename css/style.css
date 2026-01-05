@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Eindopdracht Web I - KompasKade Reizen
+   --------------------------------------------------------------------------
+   Dit is de EXTERNE CSS-file (vereiste in de opdracht is toegestaan).
+   We combineren Tailwind (layout/spacing) met eigen CSS (branding en hergebruik).
+   --------------------------------------------------------------------------
+   Tip voor feedbackmoment:
+   - Zoek naar sectie-headers (NAVIGATION, HERO, CARDS, FOOTER, REISTIPS, CONTACT)
+   ========================================================================== */
+
+/* ---------- BRANDING (kleuren + font) ---------- */
+:root{
+  --brand: #0B3D91;       /* diep oceaanblauw */
+  --brand-dark: #082D6B;  /* donkerdere hover-kleur */
+  --accent: #F97316;      /* warm oranje accent */
+  --bg: #F8FAFC;          /* lichte achtergrond */
+  --text: #0F172A;        /* slate-900 */
+  --muted: #475569;       /* slate-600 */
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ---------- HULPCLASSES ---------- */
+.page-container{
+  /* Zelfde idee als Tailwind's container, maar expliciet zichtbaar voor beoordeling */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- NAVIGATION ---------- */
+.brand{
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.brand svg{
+  width: 34px;
+  height: 34px;
+}
+
+.nav-link{
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .75rem;
+  border-radius: .55rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.nav-link:hover{
+  background: rgba(11, 61, 145, .08);
+  color: var(--brand);
+}
+
+.nav-link.active{
+  background: rgba(11, 61, 145, .12);
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .75rem 1.15rem;
+  border-radius: .75rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .12s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.btn:active{
+  transform: translateY(1px);
+}
+
+.btn-primary{
+  background: var(--brand);
+  color: #fff;
+}
+
+.btn-primary:hover{
+  background: var(--brand-dark);
+}
+
+.btn-ghost{
+  border: 2px solid rgba(255,255,255,.85);
+  color: #fff;
+}
+
+.btn-ghost:hover{
+  background: rgba(255,255,255,.12);
+}
+
+/* ---------- HERO ---------- */
+.hero-overlay{
+  /* Zachte overlay zodat tekst leesbaar is op foto */
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, .70) 0%,
+    rgba(15, 23, 42, .45) 55%,
+    rgba(15, 23, 42, .70) 100%
+  );
+}
+
+/* ---------- CARDS (diensten / reizen) ---------- */
+.card{
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, .06);
+}
+
+.card-body{
+  padding: 1rem 1rem 1.25rem;
+}
+
+.card-title{
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.card-text{
+  color: var(--muted);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer{
+  background: #0B1220;
+  color: rgba(255,255,255,.86);
+}
+
+.site-footer a{
+  color: rgba(255,255,255,.86);
+  text-decoration: none;
+}
+
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
+.footer-title{
+  color: #fff;
+  font-weight: 800;
+}
+
+/* ---------- REISTIPS (Flexbox opdracht) ---------- */
+.tips-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* De bedoeling: flex-items zoals in de tutorial met gekleurde blokken.
+   We houden het simpel: elk item krijgt een minimum breedte en wrapt automatisch. */
+.tip-item{
+  flex: 1 1 260px; /* groeit, krimpt, basisbreedte */
+  border-radius: 1rem;
+  padding: 1rem;
+  color: #0B1220;
+  background: #E2E8F0; /* default (overschreven via nth-child hieronder) */
+  border: 1px solid rgba(15, 23, 42, .12);
+}
+
+.tip-item strong{
+  display: inline-block;
+  margin-bottom: .35rem;
+}
+
+.tip-item:nth-child(1){ background: #E0F2FE; } /* licht blauw */
+.tip-item:nth-child(2){ background: #DCFCE7; } /* licht groen */
+.tip-item:nth-child(3){ background: #FFEDD5; } /* licht oranje */
+.tip-item:nth-child(4){ background: #FCE7F3; } /* licht roze */
+.tip-item:nth-child(5){ background: #EDE9FE; } /* licht paars */
+.tip-item:nth-child(6){ background: #FFE4E6; } /* licht rood */
+
+/* ---------- CONTACT ---------- */
+.form-card{
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, .10);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, .06);
+}
+
+label{
+  font-weight: 600;
+}
+
+/* Inputs voelen “netter” aan als we focus-styling toevoegen */
+input, select, textarea{
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus{
+  box-shadow: 0 0 0 3px rgba(11, 61, 145, .18);
+  border-color: rgba(11, 61, 145, .55);
+}
+
+/* ---------- PRINT (optioneel) ---------- */
+@media print{
+  nav, .btn{ display: none !important; }
+}

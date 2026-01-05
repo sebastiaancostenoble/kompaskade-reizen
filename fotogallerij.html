@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ontdek onze selectie reisbestemmingen: Marrakesh, Rome, IJsland, Tokyo, Kaapstad en de Noorse fjorden." />
+    <title>KompasKade Reizen | Onze reizen</title>
+
+    <!-- Google Font (vereiste: minstens 1 extern font) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Eigen externe CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ==========================================================
+       HEADER + NAVIGATIE
+       - Naam/logo, navigatie: zichtbaar op elke pagina (vereiste)
+       - Semantisch: <header> + <nav>
+       ========================================================== -->
+  <header class="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-50">
+    <div class="page-container">
+      <div class="flex items-center justify-between py-3 gap-4">
+        <a class="brand text-slate-900" href="index.html" aria-label="Ga naar home">
+          <img src="assets/img/logo.svg" alt="KompasKade Reizen logo" class="w-9 h-9" />
+          <span>KompasKade Reizen</span>
+        </a>
+
+        <nav aria-label="Hoofdnavigatie" class="flex flex-wrap justify-end gap-2">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="onzereizen.html">Onze reizen</a>
+          <a class="nav-link active" href="fotogallerij.html">Fotogallerij</a>
+          <a class="nav-link" href="reistips.html">Reistips</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container py-10">
+    <header class="text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold">Fotogallerij</h1>
+      <p class="text-slate-600 mt-3 max-w-2xl mx-auto">
+        Een paar sfeerbeelden van bestemmingen die we graag plannen.
+      </p>
+    </header>
+
+    <!-- ==========================================================
+         FLOWBITE GALLERY (Featured image + Masonry grid)
+         - Gebaseerd op Flowbite gallery component voorbeelden
+         - Thumbnails only: geen links, dus bij klik gebeurt er niets
+         - Afbeeldingen via picsum.photos met vaste formaten
+         ========================================================== -->
+    <section aria-label="Fotogalerij thumbnails" class="mt-10">
+      <div class="grid gap-10">
+
+        <!-- FEATURED IMAGE: 1 grote foto + 5 kleine thumbnails eronder -->
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-3">Uitgelicht</h2>
+
+          <div class="grid gap-4">
+            <div>
+              <img
+                class="w-full rounded-lg object-cover h-64 sm:h-80 md:h-[420px]"
+                src="https://picsum.photos/seed/kompaskade-featured/1600/900"
+                alt="Uitgelicht sfeerbeeld"
+              />
+            </div>
+
+            <div class="grid grid-cols-5 gap-4">
+              <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/seed/kompaskade-gallery-01/800/800" alt="Sfeerbeeld 1"/>
+              </div>
+              <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/seed/kompaskade-gallery-02/800/800" alt="Sfeerbeeld 2"/>
+              </div>
+              <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/seed/kompaskade-gallery-03/800/800" alt="Sfeerbeeld 3"/>
+              </div>
+              <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/seed/kompaskade-gallery-04/800/800" alt="Sfeerbeeld 4"/>
+              </div>
+              <div>
+                <img class="h-auto max-w-full rounded-lg" src="https://picsum.photos/seed/kompaskade-gallery-05/800/800" alt="Sfeerbeeld 5"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MASONRY GRID: één doorlopende masonry (geen aparte kolommen per device)
+             - CSS columns zorgt voor masonry flow
+             - Aantal kolommen blijft constant (niet afhankelijk van device)
+             - break-inside-avoid voorkomt dat een kaart splitst
+        -->
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 mb-3">Meer sfeerbeelden</h2>
+
+          <!--
+            Let op:
+            - We gebruiken hier geen aparte kolom containers en geen grid-cols breakpoints.
+            - De masonry blijft hetzelfde op elk device.
+          -->
+          <div class="columns-2 gap-4 [column-fill:_balance]">
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-72" src="https://picsum.photos/seed/kompaskade-gallery-06/800/800" alt="Sfeerbeeld 6" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-52" src="https://picsum.photos/seed/kompaskade-gallery-07/800/800" alt="Sfeerbeeld 7" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-64" src="https://picsum.photos/seed/kompaskade-gallery-08/800/800" alt="Sfeerbeeld 8" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-56" src="https://picsum.photos/seed/kompaskade-gallery-09/800/800" alt="Sfeerbeeld 9" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-80" src="https://picsum.photos/seed/kompaskade-gallery-10/800/800" alt="Sfeerbeeld 10" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-48" src="https://picsum.photos/seed/kompaskade-gallery-11/800/800" alt="Sfeerbeeld 11" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-68" src="https://picsum.photos/seed/kompaskade-gallery-12/800/800" alt="Sfeerbeeld 12" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-60" src="https://picsum.photos/seed/kompaskade-gallery-13/800/800" alt="Sfeerbeeld 13" />
+            </div>
+
+            <div class="mb-4 break-inside-avoid">
+              <img class="w-full rounded-lg object-cover h-76" src="https://picsum.photos/seed/kompaskade-gallery-14/800/800" alt="Sfeerbeeld 14" />
+            </div>
+
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ==========================================================
+       FOOTER
+       - Aantrekkelijke footer, responsive: gaat naar 1 kolom op smartphone
+       - Semantisch: <footer>
+       ========================================================== -->
+  <footer class="site-footer mt-16">
+    <div class="page-container py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <section aria-label="Over KompasKade Reizen">
+          <h2 class="footer-title text-lg mb-3">KompasKade Reizen</h2>
+          <p class="text-sm leading-relaxed">
+            Kleinschalig reisbureau voor reizigers die graag <strong>echt</strong> weg zijn.
+            Jij kiest de droom, wij bouwen de route: vluchten, verblijf, transfers en tips.
+          </p>
+          <p class="text-sm mt-3 opacity-90">
+            Open: ma–vr 09:00–18:00 • Za op afspraak
+          </p>
+        </section>
+
+        <section aria-label="Contactgegevens">
+          <h2 class="footer-title text-lg mb-3">Contact</h2>
+          <ul class="text-sm space-y-2">
+            <li><strong>Adres:</strong> Kade 12, 9000 Gent</li>
+            <li><strong>Tel:</strong> +32 (0)9 123 45 67</li>
+            <li><strong>E-mail:</strong> info@kompaskade.be</li>
+          </ul>
+        </section>
+
+        <section aria-label="Volg ons">
+          <h2 class="footer-title text-lg mb-3">Volg ons</h2>
+          <p class="text-sm opacity-95">
+            Inspiratie, deals en behind-the-scenes:
+          </p>
+          <ul class="text-sm mt-3 space-y-2">
+            <li><a href="#" aria-label="Instagram link">Instagram</a></li>
+            <li><a href="#" aria-label="Facebook link">Facebook</a></li>
+            <li><a href="#" aria-label="Pinterest link">Pinterest</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-6 text-sm flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+        <span>© 2025 KompasKade Reizen </span>
+
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
