@@ -157,7 +157,7 @@ body{
 }
 
 /* De bedoeling: flex-items zoals in de tutorial met gekleurde blokken.
-   We houden het simpel: elk item krijgt een minimum breedte en wrapt automatisch. */
+   elk item krijgt een minimum breedte en wrapt automatisch. */
 .tip-item{
   flex: 1 1 260px; /* groeit, krimpt, basisbreedte */
   border-radius: 1rem;
